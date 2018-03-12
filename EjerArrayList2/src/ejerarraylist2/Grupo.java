@@ -8,7 +8,7 @@ package ejerarraylist2;
 import java.util.ArrayList;
 
 /**
- *
+ * Clase grupo con un array de alumnos con getters , setters , constructor , to string y metodos 
  * @author alumno
  */
 public class Grupo {
