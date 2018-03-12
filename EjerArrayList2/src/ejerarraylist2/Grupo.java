@@ -31,6 +31,12 @@ public class Grupo {
          Alumnos a = new Alumnos(nAlumno,asignaturas);
          alumnos.add(a);
     }
+
+    @Override
+    public String toString() {
+        return "Grupo{" + "alumnos=" + alumnos + '}';
+    }
+    
     /**
      * 
      * @param nAlumno
@@ -52,10 +58,13 @@ public class Grupo {
      * @return boolean
      */
     public boolean borrarAlumnoGrupo(String nAlumno){
-       alumnos.removeIf((t) -> {t.getNombre().equalsIgnoreCase(nAlumno);
-           return true; //To change body of generated lambdas, choose Tools | Templates.
-       });
-               return false;
+        for (int i = 0; i < alumnos.size(); i++) {
+            if(alumnos.get(i).getNombre().equalsIgnoreCase(nAlumno)){
+                alumnos.remove(i);
+                return true;
+            }
+        }
+        return false;
     }
     /**
      * corra todo el array
