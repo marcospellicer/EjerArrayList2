@@ -36,7 +36,8 @@ public class EjerArrayList2 {
         System.out.println(g.obtenerMejorNota());
         g.borrarAlumnoGrupo("adri");
         System.out.println(g);
-        
+        System.out.println(g.suspensos());
+        System.out.println(g.estaGrupo("adri"));
         
     }
     

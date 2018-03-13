@@ -6,6 +6,8 @@
 package ejerarraylist2;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import javax.swing.text.html.HTMLDocument;
 
 /**
  * Clase grupo con un array de alumnos con getters , setters , constructor , to string y metodos 
@@ -58,13 +60,16 @@ public class Grupo {
      * @return boolean
      */
     public boolean borrarAlumnoGrupo(String nAlumno){
+        /*
         for (int i = 0; i < alumnos.size(); i++) {
             if(alumnos.get(i).getNombre().equalsIgnoreCase(nAlumno)){
                 alumnos.remove(i);
                 return true;
             }
         }
-        return false;
+       */
+        alumnos.removeIf((t) -> t.getNombre().equalsIgnoreCase(nAlumno));
+         return false;
     }
     /**
      * corra todo el array
@@ -108,10 +113,21 @@ public class Grupo {
      * @return boolean
      */
     public boolean estaGrupo(String nAlumno){
+        /*
         for (int i = 0; i < alumnos.size(); i++) {
             if(alumnos.get(i).getNombre().equalsIgnoreCase(nAlumno)){
                 return true;
             }
+        }
+        return false;
+*/
+        Iterator it = alumnos.iterator();
+        Alumnos al;
+        while(it.hasNext()){
+           al=(Alumnos)it.next();
+           if(al.getNombre().equalsIgnoreCase(nAlumno)){
+               return true;
+           }
         }
         return false;
     }
